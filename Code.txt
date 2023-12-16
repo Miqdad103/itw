@@ -1,0 +1,373 @@
+ Code 2 
+switch
+ 
+a = 1 b = 2 
+symbol = '+' 
+ switch(symbol)     case 
+'+'         
+fprintf('%d',a+b);     
+case '-'         
+fprintf('%d',a-b);     
+case '*'         
+fprintf('%d',a*b);     
+case '/'         
+fprintf('%d',a/b);     
+otherwise         
+fprintf('Use a valid 
+symbol'); end 
+
+
+code 2 
+greatest of all number
+
+
+a = 3 b = 4 
+c = 5  if a>b 
+&& a>c 
+    fprintf('The greatest number is a = %d',a); 
+elseif b>a && b>c 
+    fprintf('The greatest number is b = %d',b); 
+else 
+    fprintf('The greatest number is c = %d',c); end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+code 3
+
+Armstrong Number:
+Code:
+num = input('Enter a Number');
+
+num_digits = numel(num2str(num));
+
+sum = 0;
+temp = num;
+while temp > 0
+    digit = rem(temp,10);
+   sum = sum + digit^num_digits;
+   temp = floor(temp/10);
+end
+
+if sum == num
+    fprintf('This is an Armstrong Number');
+else
+    fprintf('This is not an Armstrong Number');
+end
+code 3
+
+Fibonacci Sequence:
+Code:
+num = input('Enter Number of Terms');
+
+a = 0;
+b = 1;
+i = 0;
+
+while i < num
+    c = a+b;
+    a = b;
+    b = c;
+    disp(c);
+    i = i+1;
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Code 4
+Bubble sort
+
+x = input('Input Array');
+fprintf('Unsorted Array: ');
+disp(x);
+
+num = numel(x);
+for j = 0 : num-1
+    for i = 1: num-j-1
+        if x(i)>x(i+1)
+            temp = x(i);
+            x(i) = x(i+1);
+            x(i+1) = temp;
+        end
+    end
+end
+fprintf('Sorted Array: ');
+disp(x)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Code 5 
+Basic calculator
+disp('Simple Calculator');
+disp('1. Addition');
+disp('2. Subtraction');
+disp('3. Multiplication');
+disp('4. Division');
+
+
+choice = input('Enter your choice (1/2/3/4): ');
+
+num1 = input('Enter the first number: ');
+num2 = input('Enter the second number: ');
+
+
+switch choice
+    case 1
+        result = num1 + num2;
+        fprintf('Result: %f\n', result);
+    case 2
+        result = num1 - num2;
+        fprintf('Result: %f\n', result);
+    case 3
+        result = num1 * num2;
+        fprintf('Result: %f\n', result);
+    case 4
+        if num2 == 0
+            fprintf('Error: Division by zero is not allowed.\n');
+        else
+            result = num1 / num2;
+            fprintf('Result: %f\n', result);
+        end
+    otherwise
+        fprintf('Invalid choice. Please enter a valid choice (1/2/3/4).\n');
+end
+
+
+Matrix code
+
+input_matrix = [1, 2, 3; 4, 5, 6; 7, 8, 9];
+
+
+transpose_matrix = transpose(input_matrix);
+
+
+if size(input_matrix, 1) == size(input_matrix, 2)
+  
+    inverse_matrix = inv(input_matrix);
+    disp('Inverse Matrix:');
+    disp(inverse_matrix);
+else
+    disp('Input matrix is not square, so the inverse cannot be calculated.');
+end
+
+disp('Transpose Matrix:');
+disp(transpose_matrix);
+
+
+
+code linear equation
+
+% Define the coefficient matrix A and the right-hand side vector b
+A = [2, 3; 1, -1];
+b = [8; 1];
+% Solve the linear equation Ax = b using linsolve
+x_numerical = linsolve(A, b);
+% Display the numerical solution
+disp('Numerical Solution:');
+disp(x_numerical); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Code 6 
+1. Line Plot:
+A line plot is used to represent data points as a series of connected lines.
+x = [1, 2, 3, 4, 5];
+y = [2, 3, 1, 4, 7];
+plot(x, y);
+title('Line Plot');
+xlabel('X-axis Label');
+ylabel('Y-axis Label');
+
+
+
+A scatter plot is used to visualize the relationship between two variables.
+x = [1, 2, 3, 4, 5];
+y = [2, 3, 1, 4, 7];
+scatter(x, y);
+title('Scatter Plot');
+xlabel('X-axis Label');
+ylabel('Y-axis Label');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 7 Plot function 
+
+x = linspace(0, 2 * pi, 100); 
+y = sin(x); 
+plot(x, y); 
+xlabel('X-axis'); 
+ylabel('Y-axis'); 
+title('Sine Wave Plot'); 
+grid on;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8 code m file quick sort
+
+unsortedArray = [4, 2, 9, 6, 5, 3]; 
+sortedArray = quicksort(unsortedArray); 
+disp(sortedArray); 
+function sortedArray = quicksort(arr) 
+if numel(arr) <= 1 
+sortedArray = arr; 
+return; 
+end 
+pivot = arr(1); 
+less = arr(arr < pivot); 
+equal = arr(arr == pivot); 
+greater = arr(arr > pivot); 
+sortedArray = [quicksort(less), equal, quicksort(greater)]; 
+end
